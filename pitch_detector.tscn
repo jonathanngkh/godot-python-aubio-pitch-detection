@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsxo6sfh7q3lh"]
+
+[ext_resource type="Script" path="res://pitch_detector.gd" id="1_wuj5p"]
+
+[node name="PitchDetector" type="Node"]
+script = ExtResource("1_wuj5p")
+metadata/_edit_vertical_guides_ = [576.0]
+
+[node name="KillThreadButton" type="Button" parent="."]
+offset_left = 528.0
+offset_top = 311.0
+offset_right = 624.0
+offset_bottom = 350.0
+text = "kill thread
+(stop recording)"
+
+[node name="PitchLabel" type="Label" parent="."]
+offset_left = 502.0
+offset_top = 243.0
+offset_right = 649.0
+offset_bottom = 266.0
+text = "Pitch detected:"
