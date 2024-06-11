@@ -1,7 +1,7 @@
 # Godot Python Aubio Real-Time Pitch Detection
 This real-time Pitch Detector is a Python script that runs from within [Godot 4.3]([url](https://godotengine.org/download/preview/)).
 
-It turns on the microphone using [pyaudio]([url](https://pypi.org/project/PyAudio/)), runs [aubio]([url](https://aubio.org/download)).pitch on the stream of incoming samples, then prints the detected pitch in real-time.
+It turns on the microphone using [pyaudio]([url](https://pypi.org/project/PyAudio/)), runs [aubio]([url](https://aubio.org/download)).pitch on the stream of incoming samples, then prints the detected midi pitch in real-time.
 
 A simple and useful example showing how to stream the output of an external program into Godot using [OS.execute_with_pipe()]([url](https://docs.godotengine.org/en/latest/classes/class_os.html#class-os-method-execute-with-pipe))
 
