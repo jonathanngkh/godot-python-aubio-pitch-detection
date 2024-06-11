@@ -17,10 +17,17 @@ func _ready() -> void:
 	
 	get_window().close_requested.connect(clean_func)
 	kill_thread_button.pressed.connect(clean_func)
+	
+	# if pyaudio/sys/numpy/aubio is not yet installed, run the following:
+	#var output = []
+	#OS.execute("pip3", ["install", "pyaudio", output, true])
+	#OS.execute("pip3", ["install", "sys", output, true])
+	#OS.execute("pip3", ["install", "numpy", output, true])
+	#OS.execute("pip3", ["install", "aubio", output, true])
 
 
 func _start_pitch_detection() -> void:
-	pipe = OS.execute_with_pipe("python3", ["demo_pyaudio.py"])
+	pipe = OS.execute_with_pipe("python3", ["demo_pyaudio.py"]) # you might have to change "python3" to "python" or "python2" depending on the version you're running.
 	stdio = pipe["stdio"]
 	stderr = pipe["stderr"]
 	pid = pipe["pid"]
@@ -29,7 +36,7 @@ func _start_pitch_detection() -> void:
 		print(stdio.get_line())
 		pitch = stdio.get_line()
 		
-	# print error messages
+	# print error messages, if any
 	if stdio.get_error() != OK:
 		while stderr.is_open() and stderr.get_error() == OK:
 			print(stderr.get_line())
